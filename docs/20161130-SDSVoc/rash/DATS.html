@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="./rash.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      prefix="schema: http://schema.org/ prism: http://prismstandard.org/namespaces/basic/2.0/">
+   <head>
+      <meta charset="UTF-8"/>
+      <meta name="viewport" content="width=device-width, initial-scale=1"/>
+      <link rel="stylesheet" href="css/bootstrap.min.css"/>
+      <link rel="stylesheet" href="css/rash.css"/>
+      <script src="js/jquery.min.js"> </script>
+      <script src="js/bootstrap.min.js"> </script>
+      <script src="js/rash.js"> </script>
+      <script src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"> </script>
+      <title>DATS model: </title>
+      <meta about="#affiliation-1"
+            property="schema:name"
+            content="Oxford e-Research Centre, University of Oxford, UK"/>
+      <meta about="#affiliation-2"
+            property="schema:name"
+            content="bioCADDIE project"/>
+      <meta about="#author-1"
+            name="dc.creator"
+            property="schema:name"
+            content="Alejandra Gonzalez-Beltran"/>
+      <meta about="#author-1"
+            property="schema:email"
+            content="alejandra.gonzalezbeltran@oerc.ox.ac.uk"/>
+      <link about="#author-1"
+            property="schema:affiliation"
+            href="#affiliation-1"/>
+      <meta about="#author-2"
+            name="dc.creator"
+            property="schema:name"
+            content="Philippe Rocca-Serra"/>
+      <meta about="#author-2"
+            property="schema:email"
+            content="philippe.rocca-serra@oerc.ox.ac.uk"/>
+      <link about="#author-2"
+            property="schema:affiliation"
+            href="#affiliation-1"/>
+      <meta about="#author-3"
+            name="dc.creator"
+            property="schema:name"
+            content="Susanna-Assunta Sansone"/>
+      <meta about="#author-3"
+            property="schema:email"
+            content="susanna-assunta.sansone@oerc.ox.ac.uk"/>
+      <link about="#author-3"
+            property="schema:affiliation"
+            href="#affiliation-1"/>
+      <meta about="#author-4"
+            name="dc.creator"
+            property="schema:name"
+            content="bioCADDIE Team"/>
+      <meta about="#author-4"
+            property="schema:email"
+            content="http://biocaddie.org"/>
+      <link about="#author-4"
+            property="schema:affiliation"
+            href="#affiliation-2"/>
+   </head>
+   <body>
+      <section role="doc-abstract">
+         <h1>Abstract</h1>
+         <p>This document introduces DATS, which stands for DAta Tag Suite, and it is a data description model designed and developed to describe datasets being ingested in DataMed<a href="#ftn1"> </a>, a prototype for data discovery developed as part of the National Institutes of Health (NIH) Big Data 2 Knowledge (BD2K) bioCADDIE project<a href="#ftn2"> </a>. We want to share our experience with the Smart Descriptions &amp; Smarter Vocabularies (SDSVoc) community in order to contribute to the discussion about development and management of vocabularies for the description of datasets, as well as learn from others at SDSVoc to feed back into the iterative development of DATS and DataMed.</p>
+         <p>In our presentation, we will explain the approach we followed in creating DATS, which combined the consideration of competency questions and an analysis of existing models/vocabularies for describing datasets, in an iterative approach to deliver the DATS model. We will also present our work on mapping DATS to schema.org, and proposals for required extensions. </p>
+      </section>
+      <section>
+         <h1>Introduction</h1>
+         <p>Life science and biomedical research has become a data-driven enterprise. Currently, the data produced can be submitted to specialised databases, generic data repositories or institutional repositories in the best case scenarios. Making research data available is encouraged, and sometimes mandated, by funders and journals. </p>
+         <p>Even when the data is available, researchers need to search and find for datasets across multiple repositories. While these repositories are catalogued in the BioSharing portal <strong>[McQuilton et al 2016]</strong>, there is no easy way for researchers to search, find and cite existing datasets that might be relevant for their own work. Thus, the need for a Data Discovery Index (DDI) with this functionality became apparent. The NIH BD2K bioCADDIE project was setup with the objective of building a DDI prototype and the aims and scope for this prototype were described in the bioCADDIE White Paper <strong>[Ohno-Machado et al 2015]</strong>. The prototype is being built and continuously refined. Its implementation is called DataMed, as its main objective to provide for datasets similar functionality to what PubMed<a href="#ftn3"> </a> provides for the biomedical literature.</p>
+         <p/>
+         <p>Within the bioCADDIE project, a working group (WG3) was created with the aim to define specifications for descriptive metadata for the datasets to be indexed in DataMed, and this paper will describe the outcomes of WG3. In particular, in this presentation will describe the approach taken and the reasons why we defined a set of core and extended entities and attributes that are part of DATS or DAta Tag Suite, which is the descriptive metadata model underlying the DataMed prototype. </p>
+         <p>DATS has been developed in an iterative process, whose approach is described in this paper, and there have been 4 releases: DATS 1.0<a href="#ftn4"> </a>, DATS 1.1<a href="#ftn5"> </a>, DATS 2.0<a href="#ftn6"> </a> and DATS 2.1<a href="#ftn7"> </a>.</p>
+      </section>
+      <section>
+         <h1>DATS development</h1>
+         <p>The work to design DATS has been performed as an open activity with community input, led by core members of the bioCADDIE project and with contributions from members of bioCADDIE WG3<a href="#ftn8"> </a> and WG7<a href="#ftn9"> </a> (that focused on the metadata required for accessibility of datasets) as well as the broader community. </p>
+         <p>We will describe the two-fold approach for DATS development. Firstly, we made an analysis of a set of use cases to find datasets that were gather from the community in a variety of ways. Secondly, we analysed numerous metadata models or schemas or vocabularies available for describing datasets, including both generic descriptions (including DataCite, HCLS dataset description, which in turn considers DCAT, Dublin Core and others) as well as models that describe biomedical datasets (BioProject, BioSample, Investigation/Study/Assay or ISA, GA4GH metadata, CDISC among others). DATS is the result of converging to a set of entities and attributes divided into the profiles: core DATS, an extended DATS for biomedical datasets, and another extension to consider provenance. </p>
+         <p>Finally, in order to support greater visibility from search engines, we have also investigated the capabilities of schema.org for describing datasets. We have analysed the schema.org coverage for annotating DATS, have produced a first set of annotations and are working with the schema.org community to extend the vocabulary when relevant.</p>
+         <p>In this presentation, we will also describe the use of DATS for ingesting datasets into the DataMed prototype and future work.</p>
+      </section>
+      <section role="doc-bibliography">
+         <h1>References</h1>
+         <p>
+            <strong>[McQuilton et al 2016] </strong>Peter McQuilton, Alejandra Gonzalez-Beltran, Philippe Rocca-Serra, Milo Thurston, Allyson Lister, Eamonn Maguire, Susanna-Assunta Sansone. <q>BioSharing: curated and crowd-sourced metadata standards, databases and data policies in the life sciences</q>. Database, 2016. doi: <a href="https://dx.doi.org/10.1093/database/baw075">https://dx.doi.org/10.1093/database/baw075</a>
+         </p>
+         <p>
+            <strong>[Ohno-Machado et al 2015]</strong> Ohno-machado, Lucila; Alter, George; Fore, Ian; Martone, Maryann; Sansone, Susanna-Assunta; Xu, Hua (2015): bioCADDIE white paper - Data Discovery Index. Figshare. <a href="https://dx.doi.org/10.6084/m9.figshare.1362572.v1">https://dx.doi.org/10.6084/m9.figshare.1362572.v1</a>
+         </p>
+         <p>Retrieved: 10 30, Oct 05, 2016 (GMT)</p>
+      </section>
+      <section role="doc-footnotes">
+         <section id="ftn1" role="doc-footnote">
+            <p>
+               <a href="http://datamed.org/">http://datamed.org/</a>
+            </p>
+         </section>
+         <section id="ftn2" role="doc-footnote">
+            <p>
+               <a href="http://biocaddie.org/">http://biocaddie.org/</a>
+            </p>
+         </section>
+         <section id="ftn3" role="doc-footnote">
+            <p>
+               <a href="http://www.ncbi.nlm.nih.gov/pubmed/">http://www.ncbi.nlm.nih.gov/pubmed/</a>
+            </p>
+         </section>
+         <section id="ftn4" role="doc-footnote">
+            <p>
+               <a href="http://dx.doi.org/10.5281/zenodo.28019">http://dx.doi.org/10.5281/zenodo.28019</a>
+            </p>
+         </section>
+         <section id="ftn5" role="doc-footnote">
+            <p>
+               <a href="http://dx.doi.org/10.5281/zenodo.53078">http://dx.doi.org/10.5281/zenodo.53078</a>
+            </p>
+         </section>
+         <section id="ftn6" role="doc-footnote">
+            <p>
+               <a href="http://dx.doi.org/10.5281/zenodo.54010">http://dx.doi.org/10.5281/zenodo.54010</a>
+            </p>
+         </section>
+         <section id="ftn7" role="doc-footnote">
+            <p>
+               <a href="http://dx.doi.org/10.5281/zenodo.62024">http://dx.doi.org/10.5281/zenodo.62024</a>
+            </p>
+         </section>
+         <section id="ftn8" role="doc-footnote">
+            <p>
+               <a href="https://biocaddie.org/workgroup-3-group-links">https://biocaddie.org/workgroup-3-group-links</a>
+            </p>
+         </section>
+         <section id="ftn9" role="doc-footnote">
+            <p>
+               <a href="https://biocaddie.org/group/working-group/working-group-7-accessibility-metadata-datasets">https://biocaddie.org/group/working-group/working-group-7-accessibility-metadata-datasets</a>
+            </p>
+         </section>
+      </section>
+   </body>
+</html>
