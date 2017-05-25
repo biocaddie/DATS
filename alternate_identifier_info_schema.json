@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/alternate_identifier_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "DATS alternate identifier information schema",
   "description": "Information about an alternate identifier (other than the primary).",

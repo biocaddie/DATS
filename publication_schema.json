@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/publication_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title" : "DATS publication schema",
   "description" : "A (digital) document made available by a publisher.",
@@ -16,20 +17,20 @@
     },
     "@type":  { "type": "string", "enum": [ "Publication" ]},
     "identifier": {
-      "$ref": "identifier_info_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/identifier_info_schema.json#"
     },
     "alternateIdentifiers": {
       "description": "Alternate identifiers for the publication.",
       "type": "array",
       "items": {
-        "$ref": "alternate_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/alternate_identifier_info_schema.json#"
       }
     },
     "relatedIdentifiers": {
       "description": "Related identifiers for the publication.",
       "type": "array",
       "items": {
-        "$ref": "related_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/related_identifier_info_schema.json#"
       }
     },
     "title": {
@@ -38,7 +39,7 @@
     },
     "type" : {
       "description": "Publication type, ideally delegated to an external vocabulary/resource.",
-      "$ref" : "annotation_schema.json#"
+      "$ref" : "http://biocaddie.github.io/dats/annotation_schema.json#"
     },
     "publicationVenue": {
       "description": "The name of the publication venue where the document is published if applicable.",
@@ -48,7 +49,7 @@
       "description": "Relevant dates, the date of the publication must be provided.",
       "type" : "array",
       "items": {
-        "$ref" : "date_info_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/date_info_schema.json#"
       }
     },
     "authors" : {
@@ -56,8 +57,8 @@
       "type" : "array",
       "items" : {
         "oneOf": [
-          {"$ref" : "person_schema.json#"},
-          {"$ref" : "organization_schema.json#"}
+          {"$ref" : "http://biocaddie.github.io/dats/person_schema.json#"},
+          {"$ref" : "http://biocaddie.github.io/dats/organization_schema.json#"}
         ]
       },
       "minItems" : 1
@@ -70,21 +71,21 @@
       "description": "The grant(s) which funded and supported the work reported by the publication.",
       "type" : "array",
       "items" : {
-        "$ref" : "grant_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/grant_schema.json#"
       }
     },
     "licenses" : {
       "description": "The terms of use of the publication.",
       "type" : "array",
       "items" : {
-        "$ref" : "license_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/license_schema.json#"
       }
     },
     "extraProperties": {
       "description": "Extra properties that do not fit in the previous specified attributes. ",
       "type": "array",
       "items": {
-        "$ref" : "category_values_pair_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/category_values_pair_schema.json#"
       }
     }
   },

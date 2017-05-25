@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/access_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "DATS access schema",
   "description": "Information about resources that provide the means to obtain an asset (a dataset or other research object).",
@@ -16,18 +17,18 @@
     },
     "@type": { "type": "string", "enum": [ "Access" ]},
     "identifier": {
-      "$ref": "identifier_info_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/identifier_info_schema.json#"
     },
     "alternateIdentifiers": {
       "type": "array",
       "items": {
-        "$ref": "alternate_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/alternate_identifier_info_schema.json#"
       }
     },
     "relatedIdentifiers": {
       "type": "array",
       "items": {
-        "$ref": "related_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/related_identifier_info_schema.json#"
       }
     },
     "landingPage": {
@@ -44,28 +45,28 @@
       "description": "Method to obtain the resource, ideally specified from a controlled vocabulary or ontology.",
       "type": "array",
       "items": {
-        "$ref": "annotation_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/annotation_schema.json#"
       }
     },
     "authorizations": {
       "description": "Types of verification that accessing the resource is allowed. Authorization occurs before successful authentication and refers to the process of obtaining approval to use a data set. Ideally specified from a controlled vocabulary or ontology.",
       "type": "array",
       "items": {
-        "$ref": "annotation_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/annotation_schema.json#"
       }
     },
     "authentications": {
       "description": "Types of verification of the credentials for accessing the resource, it is the identification process at the time of access. ideally specified from a controlled vocabulary or ontology.",
       "type": "array",
       "items": {
-        "$ref": "annotation_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/annotation_schema.json#"
       }
     },
     "extraProperties": {
       "description": "Extra properties that do not fit in the previous specified attributes. ",
       "type": "array",
       "items": {
-        "$ref" : "category_values_pair_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/category_values_pair_schema.json#"
       }
     }
   },

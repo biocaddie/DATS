@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/data_standard_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "DATS data standard schema",
   "description": "A format, reporting guideline, terminology. It is used to indicate whether the dataset conforms to a particular community norm or specification.",
@@ -16,20 +17,20 @@
     },
     "@type": { "type": "string", "enum": [ "DataStandard" ]},
     "identifier": {
-      "$ref": "identifier_info_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/identifier_info_schema.json#"
     },
     "alternateIdentifiers": {
       "description": "Alternate identifiers for the standard.",
       "type": "array",
       "items": {
-        "$ref": "alternate_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/alternate_identifier_info_schema.json#"
       }
     },
     "relatedIdentifiers": {
       "description": "Related identifiers for the standard.",
       "type": "array",
       "items": {
-        "$ref": "related_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/related_identifier_info_schema.json#"
       }
     },
     "name": {
@@ -42,13 +43,13 @@
     },
     "type" : {
       "description": "The nature of the information resource, ideally specified with a controlled vocabulary or ontology (.e.g model or format, vocabulary, reporting guideline).",
-      "$ref" : "annotation_schema.json#"
+      "$ref" : "http://biocaddie.github.io/dats/annotation_schema.json#"
     },
     "licenses" : {
       "description": "The terms of use of the data standard.",
       "type" : "array",
       "items" : {
-        "$ref" : "license_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/license_schema.json#"
       }
     },
     "version" : {
@@ -59,7 +60,7 @@
       "description": "Extra properties that do not fit in the previous specified attributes. ",
       "type": "array",
       "items": {
-        "$ref" : "category_values_pair_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/category_values_pair_schema.json#"
       }
     }
   },

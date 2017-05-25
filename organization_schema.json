@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/organization_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "DATS organization schema",
   "description": "Legal or physical entity corresponding to a business or administration.",
@@ -16,20 +17,20 @@
     },
     "@type": { "type": "string", "enum": [ "Organization" ]},
     "identifier": {
-      "$ref": "identifier_info_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/identifier_info_schema.json#"
     },
     "alternateIdentifiers": {
       "description": "Alternate identifiers for the organization.",
       "type": "array",
       "items": {
-        "$ref": "alternate_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/alternate_identifier_info_schema.json#"
       }
     },
     "relatedIdentifiers": {
       "description": "Related identifiers for the organization.",
       "type": "array",
       "items": {
-        "$ref": "related_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/related_identifier_info_schema.json#"
       }
     },
     "name": {
@@ -42,20 +43,20 @@
     },
     "location": {
       "description": "The place where the organization is located.",
-      "$ref" : "place_schema.json#"
+      "$ref" : "http://biocaddie.github.io/dats/place_schema.json#"
     },
     "roles" : {
       "description": "The roles of the organization (ideally from a controlled vocabulary/ontology).",
       "type" : "array",
       "items" : {
-        "$ref" : "annotation_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/annotation_schema.json#"
       }
     },
     "extraProperties": {
       "description": "Extra properties that do not fit in the previous specified attributes. ",
       "type": "array",
       "items": {
-        "$ref" : "category_values_pair_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/category_values_pair_schema.json#"
       }
     }
   },

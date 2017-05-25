@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/grant_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "DATS grant schema",
   "description": "An allocated sum of funds given by a government or other organization for a particular purpose.",
@@ -16,20 +17,20 @@
     },
     "@type": { "type": "string", "enum": [ "Grant" ]},
     "identifier": {
-      "$ref": "identifier_info_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/identifier_info_schema.json#"
     },
     "alternateIdentifiers": {
       "description": "Alternate identifiers for the grant.",
       "type": "array",
       "items": {
-        "$ref": "alternate_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/alternate_identifier_info_schema.json#"
       }
     },
     "relatedIdentifiers": {
       "description": "Related identifiers for the grant.",
       "type": "array",
       "items": {
-        "$ref": "related_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/related_identifier_info_schema.json#"
       }
     },
     "name": {
@@ -41,8 +42,8 @@
       "type" : "array",
       "items" : {
         "oneOf": [
-          {"$ref" : "study_schema.json#"},
-          {"$ref" : "dataset_schema.json#"}
+          {"$ref" : "http://biocaddie.github.io/dats/study_schema.json#"},
+          {"$ref" : "http://biocaddie.github.io/dats/dataset_schema.json#"}
         ]
       }
     },
@@ -51,8 +52,8 @@
       "type" : "array",
       "items" : {
         "oneOf": [
-          {"$ref" : "person_schema.json#"},
-          {"$ref" : "organization_schema.json#"}
+          {"$ref" : "http://biocaddie.github.io/dats/person_schema.json#"},
+          {"$ref" : "http://biocaddie.github.io/dats/organization_schema.json#"}
         ]
       },
       "minItems" : 1
@@ -62,8 +63,8 @@
       "type" : "array",
       "items" : {
         "oneOf": [
-          {"$ref" : "person_schema.json#"},
-          {"$ref" : "organization_schema.json#"}
+          {"$ref" : "http://biocaddie.github.io/dats/person_schema.json#"},
+          {"$ref" : "http://biocaddie.github.io/dats/organization_schema.json#"}
         ]
       }
     },
@@ -71,7 +72,7 @@
       "description": "Extra properties that do not fit in the previous specified attributes. ",
       "type": "array",
       "items": {
-        "$ref" : "category_values_pair_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/category_values_pair_schema.json#"
       }
     }
   },

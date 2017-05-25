@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/study_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "DATS study schema",
   "description": "Process to acquire data on a sample and attempt to draw conclusions about the population the sample has been selected from, executing a plan and design.",
@@ -16,20 +17,20 @@
     },
     "@type": { "type": "string", "enum": [ "Study" ]},
     "identifier": {
-      "$ref": "identifier_info_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/identifier_info_schema.json#"
     },
     "alternateIdentifiers": {
       "description": "Alternate identifiers for the activity.",
       "type": "array",
       "items": {
-        "$ref": "alternate_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/alternate_identifier_info_schema.json#"
       }
     },
     "relatedIdentifiers": {
       "description": "Related identifiers for the activity.",
       "type": "array",
       "items": {
-        "$ref": "related_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/related_identifier_info_schema.json#"
       }
     },
     "name": {
@@ -44,7 +45,7 @@
       "description": "The types of study (e.g. intervention or observation or meta-analysis or clinical trials, or behavioural study, or the study design).",
       "type": "array",
       "items": {
-        "$ref": "annotation_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/annotation_schema.json#"
       }
     },
     "startDate": {
@@ -53,13 +54,13 @@
     },
     "endDate": {
       "description": "A timestamp to record the end point of the activity.",
-      "$ref": "date_info_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/date_info_schema.json#"
     },
     "dates" : {
       "description": "Relevant dates for the datasets, a date must be added, e.g. creation date or last modification date should be added.",
       "type" : "array",
       "items" : {
-        "$ref" : "date_info_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/date_info_schema.json#"
       }
     },
     "duration": {
@@ -68,7 +69,7 @@
     },
     "location": {
       "description": "The location where the activity takes place.",
-      "$ref": "place_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/place_schema.json#"
     },
     "performedBy": {
       "description": "The person(s) or organisation(s) responsible for executing the process.",
@@ -76,10 +77,10 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "person_schema.json#"
+            "$ref": "http://biocaddie.github.io/dats/person_schema.json#"
           },
           {
-            "$ref": "organization_schema.json#"
+            "$ref": "http://biocaddie.github.io/dats/organization_schema.json#"
           }
         ]
       }
@@ -88,7 +89,7 @@
       "description": "Tags associated with the activity, which will help in its discovery.",
       "type": "array",
       "items": {
-        "$ref": "annotation_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/annotation_schema.json#"
       }
     },
     "input": {
@@ -97,10 +98,10 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "dataset_schema.json#"
+            "$ref": "http://biocaddie.github.io/dats/dataset_schema.json#"
           },
           {
-            "$ref": "material_schema.json#"
+            "$ref": "http://biocaddie.github.io/dats/material_schema.json#"
           }
         ]
       }
@@ -111,10 +112,10 @@
       "items": {
         "anyOf": [
           {
-            "$ref": "dataset_schema.json#"
+            "$ref": "http://biocaddie.github.io/dats/dataset_schema.json#"
           },
           {
-            "$ref": "material_schema.json#"
+            "$ref": "http://biocaddie.github.io/dats/material_schema.json#"
           }
         ]
       }
@@ -124,9 +125,9 @@
       "type": "array",
       "items": {
         "anyOf":[
-          {"$ref": "activity_schema.json#"},
-          {"$ref": "data_acquisition_schema.json#"},
-          {"$ref": "data_analysis_schema.json#"}
+          {"$ref": "http://biocaddie.github.io/dats/activity_schema.json#"},
+          {"$ref": "http://biocaddie.github.io/dats/data_acquisition_schema.json#"},
+          {"$ref": "http://biocaddie.github.io/dats/data_analysis_schema.json#"}
         ]
       }
     },
@@ -134,7 +135,7 @@
       "description": "The kind of techniques and response variables used during a study for acquiring data.",
       "type": "array",
       "items": {
-        "$ref": "data_acquisition_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/data_acquisition_schema.json#"
       },
       "minItems": 1
     },
@@ -143,8 +144,8 @@
       "type": "array",
       "items": {
         "anyOf": [
-          { "$ref": "annotation_schema.json#"},
-          { "$ref": "category_values_pair_schema.json#"}
+          { "$ref": "http://biocaddie.github.io/dats/annotation_schema.json#"},
+          { "$ref": "http://biocaddie.github.io/dats/category_values_pair_schema.json#"}
         ]
       }
     },
@@ -152,28 +153,28 @@
       "description": "The different study groups associated with a study.",
       "type": "array",
       "items": {
-        "$ref": "study_group_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/study_group_schema.json#"
       }
     },
     "usesReagent": {
       "description": "The materials that are used as reagents (but not subjects) of the study.",
       "type": "array",
       "items": {
-        "$ref": "material_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/material_schema.json#"
       }
     },
     "isAboutBiologicalEntity": {
       "description": "The biological entities relevant to the study, ideally from a controlled vocabulary/ontology such as Gene Ontology.",
       "type": "array",
       "items": {
-        "$ref": "biological_entity_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/biological_entity_schema.json#"
       }
     },
     "extraProperties": {
       "description": "Extra properties that do not fit in the previous specified attributes. ",
       "type": "array",
       "items": {
-        "$ref" : "category_values_pair_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/category_values_pair_schema.json#"
       }
     }
   },

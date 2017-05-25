@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/place_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "DATS place schema",
   "description": "A spatially bounded entity.",
@@ -16,20 +17,20 @@
   "properties": {
     "identifier": {
       "description": "Primary identifier for the place.",
-      "$ref": "identifier_info_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/identifier_info_schema.json#"
     },
     "alternateIdentifiers": {
       "description": "Alternate identifiers for the place.",
       "type": "array",
       "items": {
-        "$ref": "alternate_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/alternate_identifier_info_schema.json#"
       }
     },
     "relatedIdentifiers": {
       "description": "Related identifiers for the place.",
       "type": "array",
       "items": {
-        "$ref": "related_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/related_identifier_info_schema.json#"
       }
     },
     "name": {

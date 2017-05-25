@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/data_repository_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "DATS data repository schema",
   "description": "A repository or catalog of datasets. It could be a primary repository or a repository that aggregates data existing in other repositories.",
@@ -17,20 +18,20 @@
     },
     "@type": { "type": "string", "enum": [ "DataRepository" ]},
     "identifier": {
-      "$ref": "identifier_info_schema.json#"
+      "$ref": "http://biocaddie.github.io/dats/identifier_info_schema.json#"
     },
     "alternateIdentifiers": {
       "description": "Alternate identifiers for the data repository.",
       "type": "array",
       "items": {
-        "$ref": "alternate_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/alternate_identifier_info_schema.json#"
       }
     },
     "relatedIdentifiers": {
       "description": "Related identifiers for the data repository.",
       "type": "array",
       "items": {
-        "$ref": "related_identifier_info_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/related_identifier_info_schema.json#"
       }
     },
     "name": {
@@ -45,28 +46,28 @@
       "description": "Relevant dates for the data repository.",
       "type" : "array",
       "items" : {
-        "$ref" : "date_info_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/date_info_schema.json#"
       }
     },
     "scopes": {
       "description": "Information about the nature of the datasets in the repository, ideally from a controlled vocabulary or ontology (e.g. transcription profile, sequence reads, molecular structure, image, DNA sequence, NMR spectra).",
       "type": "array",
       "items": {
-        "$ref": "annotation_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/annotation_schema.json#"
       }
     },
     "types": {
       "description": "A descriptor (ideally from a controlled vocabulary) providing information about the type of repository, such as primary resource or aggregator.",
       "type": "array",
       "items": {
-        "$ref": "annotation_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/annotation_schema.json#"
       }
     },
     "licenses": {
       "description": "The terms of use of the data repository.",
       "type": "array",
       "items": {
-        "$ref": "license_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/license_schema.json#"
       }
     },
     "version": {
@@ -79,10 +80,10 @@
       "items": {
         "oneOf": [
           {
-            "$ref": "person_schema.json#"
+            "$ref": "http://biocaddie.github.io/dats/person_schema.json#"
           },
           {
-            "$ref": "organization_schema.json#"
+            "$ref": "http://biocaddie.github.io/dats/organization_schema.json#"
           }
         ]
       }
@@ -91,21 +92,21 @@
       "description": "The DataRepositories aggregated by this repository. This property will be empty for primary repositories.",
       "type": "array",
       "items": {
-        "$ref": "data_repository_schema.json#"
+        "$ref": "http://biocaddie.github.io/dats/data_repository_schema.json#"
       }
     },
     "access" : {
       "description": "The information about access modality for the data repository.",
       "type" : "array",
       "items" : {
-        "$ref" : "access_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/access_schema.json#"
       }
     },
     "extraProperties": {
       "description": "Extra properties that do not fit in the previous specified attributes. ",
       "type": "array",
       "items": {
-        "$ref" : "category_values_pair_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/category_values_pair_schema.json#"
       }
     }
   },

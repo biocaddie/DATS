@@ -1,4 +1,5 @@
 {
+  "id": "http://biocaddie.github.io/dats/date_info_schema.json#",
   "$schema": "http://json-schema.org/draft-04/schema",
   "title": "DATS date information schema.",
   "description": "Information about a calendar date or timestamp indicating day, month, year and time of an event.",
@@ -22,7 +23,7 @@
     },
     "type": {
       "description": "The type of date, used to specify the process which is being timestamped by the date attribute value, ideally comes from a controlled terminology.",
-      "$ref" : "annotation_schema.json#"
+      "$ref" : "http://biocaddie.github.io/dats/annotation_schema.json#"
     }
   },
   "additionalProperties": false,
