@@ -15,6 +15,17 @@
 
   },
   "properties": {
+    "@context": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "object"
+        }
+      ]
+    },
+    "@type": { "type": "string", "enum": [ "Place" ]},
     "identifier": {
       "description": "Primary identifier for the place.",
       "$ref": "http://biocaddie.github.io/dats/identifier_info_schema.json#"
@@ -53,7 +64,7 @@
     },
     "coordinates": {
       "type": "array",
-      "minItems": 2,
+      "minItems": 1,
       "items": { "$ref": "#/definitions/position" }
     }
   }
