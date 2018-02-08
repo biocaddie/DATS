@@ -52,7 +52,7 @@
       "description": "The spatial coordinates denoting the geospatial origin of the material used to produce measurements part of the dataset.",
       "type" : "array",
       "items" : {
-        "$ref" : "http://biocaddie.github.io/dats/annotation_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/place_schema.json#"
       }
     },
     "bearerOfDisease": {
