@@ -78,7 +78,7 @@
       "description": "Tags associated with the activity, which will help in its discovery.",
       "type": "array",
       "items": {
-        "$ref" : "annotation_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/annotation_schema.json#"
       }
     },
     "input" : {
@@ -86,8 +86,8 @@
       "type": "array",
       "items":{
         "anyOf": [
-          {"$ref" : "dataset_schema.json#"},
-          {"$ref" : "material_schema.json#"}
+          {"$ref" : "http://biocaddie.github.io/dats/dataset_schema.json#"},
+          {"$ref" : "http://biocaddie.github.io/dats/material_schema.json#"}
         ]
       }
     },
@@ -96,8 +96,8 @@
       "type": "array",
       "items":{
         "anyOf": [
-          {"$ref" : "dataset_schema.json#"},
-          {"$ref" : "material_schema.json#"}
+          {"$ref" : "http://biocaddie.github.io/dats/dataset_schema.json#"},
+          {"$ref" : "http://biocaddie.github.io/dats/material_schema.json#"}
         ]
       }
     },
@@ -105,7 +105,7 @@
       "description": "Extra properties that do not fit in the previous specified attributes. ",
       "type": "array",
       "items": {
-        "$ref" : "category_values_pair_schema.json#"
+        "$ref" : "http://biocaddie.github.io/dats/category_values_pair_schema.json#"
       }
     }
   },
